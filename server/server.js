@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const port = 8000;
 
-require('./server/config/mongoose.config');
+require('./config/mongoose.config');
 app.use(cors(), express.json(), express.urlencoded({extended: true}));
-require('./server/routes/pet.routes')(app);
+require('./routes/pet.routes')(app);
 app.listen(port, () => console.log(`Listening on port ${port}`));
